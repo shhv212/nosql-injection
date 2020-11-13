@@ -88,3 +88,5 @@ Vào trong code để tìm hiểu, ta thấy rằng khi `username` và `password
 
 <img src="https://i.imgur.com/TRUV7CE.png">  
 
+Trên đây là 1 trong nhiều ví dụ về việc các lập trình viên có thể viết thêm các hàm để kiểm tra việc đăng nhập, vì vậy attacker khó có thể tìm ra lỗ hổng để thực hiện tấn công NoSQL injection hơn.
+
