@@ -119,3 +119,4 @@ Và kết quả là:
 <img src="https://i.imgur.com/zVO4aMs.png">  
 
 Tóm lại khi chúng ta sử dụng cách này sẽ ngăn chặn tất cả những kiểu tấn công Nosql injection nào có chứa những ký tự đặc biệt mà khi người dùng hợp pháp đăng ký tài khoản ta không cho họ sử dụng những ký tự này.  
+
