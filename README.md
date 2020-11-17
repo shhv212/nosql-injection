@@ -21,7 +21,8 @@
 <a name="demo"></a>  
 ## II. Thực hành demo khai thác  
 
-
+Tôi sẽ trình bày phần demo này bằng video để mọi người tiện theo dõi cách tấn công như thế nào. Trong phần này, tôi sẽ giới thiệu những kỹ thuật tấn công như bypass login, tấn công dò đoán và tấn công từ chối dịch vụ (DoS).
+[Video_Demo](https://drive.google.com/drive/folders/1pQV7CdHwI5i_n_FpYbW-sQ1W8UnaRNOb?usp=sharing)  
 
 <a name="prevent"></a>  
 ## III. Cách phòng chống NoSQL injection trên thực tế  
@@ -104,6 +105,8 @@ Sau đó trước khi tạo câu query thì ra phải đưa 2 hàm này vào ki�
 <img src="https://i.imgur.com/nUYAkh5.png">  
 
 Thử xem bây giờ có còn thực hiện injection được nữa hay không:  
+
+<img src="https://i.imgur.com/w1fhODF.png">  
 
 <img src="https://i.imgur.com/cRqcc42.png">  
 
