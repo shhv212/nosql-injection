@@ -90,3 +90,29 @@ Vào trong code để tìm hiểu, ta thấy rằng khi `username` và `password
 
 Trên đây là 1 trong nhiều ví dụ về việc các lập trình viên có thể viết thêm các hàm để kiểm tra việc đăng nhập, vì vậy attacker khó có thể tìm ra lỗ hổng để thực hiện tấn công NoSQL injection hơn.
 
+
+Bây giờ chúng ta thực hiện tiếp `1 ví dụ` nữa về việc ngăn chặn kẻ xấu có thể thực hiện được việc `bypass login`. Rõ ràng ta thấy khi sử dụng chuỗi `{"$ne":null}` để chèn vào trong câu truy vấn thì attacker đã sử dụng những ký tự đặc biệt như $,{},"",... :  
+
+<img src="https://i.imgur.com/Q1RGxx2.png">  
+
+Vậy ta nảy ra một ý tưởng mới rằng có thể ngăn chặn việc bypass login này bằng cách kiểm tra người dùng có sử dụng những ký tự đặc biệt không trước khi lấy username và password đó để tạo câu truy vấn vào database. Chúng ta sẽ thử với source ở phần demo:  
+
+<img src="https://i.imgur.com/K1BoQuB.png">  
+
+Sau đó trước khi tạo câu query thì ra phải đưa 2 hàm này vào kiểm tra trước:  
+
+<img src="https://i.imgur.com/nUYAkh5.png">  
+
+Thử xem bây giờ có còn thực hiện injection được nữa hay không:  
+
+<img src="https://i.imgur.com/cRqcc42.png">  
+
+Vì lí do khi ta thực hiện inject trường username thì hàm check username sẽ được gọi trước nên nó đã báo lỗi trước mặc dù ta thực hiện inject cả username và password. Bây giờ giả sử nếu bằng một cách nào đó mà attacker biết được username là `sang` và đi inject password thôi thì kết quả sẽ như thế nào:  
+
+<img src="https://i.imgur.com/2MoGTAc.png">  
+
+Và kết quả là:  
+
+<img src="https://i.imgur.com/zVO4aMs.png">  
+
+Tóm lại khi chúng ta sử dụng cách này sẽ ngăn chặn tất cả những kiểu tấn công Nosql injection nào có chứa những ký tự đặc biệt mà khi người dùng hợp pháp đăng ký tài khoản ta không cho họ sử dụng những ký tự này.  
